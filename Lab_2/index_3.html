@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Framwork Lab 2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    // 3)
+
+    const sayHello1 = function () {
+        console.log("Hello World");
+    }
+
+    const hello1 = () => {
+        console.log("AF1 function");
+    }
+
+    sayHello1();
+    hello1();
+
+
+
+    const sayHelloTwo = function (param) {
+        console.log(param + " in Regular ");
+    }
+
+    const helloTwo = param => {
+        console.log(param + " AF1 function");
+    }
+
+    sayHelloTwo("Hello");
+    helloTwo("hello");
+
+
+
+
+    const add = function (param1, param2) {
+        return param1 + param2;
+    };
+    const addArrow = (param1,param2) => {
+        return param1 + param2;
+    };
+    console.log(add(2,5));
+    console.log(addArrow(8,5));
+
+
+
+
+    window.name = "Arrow Function"
+    let data = {
+        name: "Regular",
+        thisArrow: ()=>{
+            console.log(this.name);
+        },
+        thisNormal(){
+            console.log(this.name);
+        }
+    }
+    data.thisArrow();
+    data.thisNormal();
+
+</script>
+
+</body>
+</html>
