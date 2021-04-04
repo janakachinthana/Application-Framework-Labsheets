@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Framework Lab 2</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    // example time out function
+    let x = function () {
+        setTimeout(function () {
+            console.log("Hello");
+        },1000);
+    };
+
+    x();
+
+    // 1.1)
+    function getValue() {
+        let value = 0;
+
+        setTimeout(function () {
+            value = 5;
+            console.log(value);
+            return value;
+        },2000);
+
+    }
+
+    console.log(getValue());
+
+
+    // 1.2)
+    function print(value) {
+        console.log(value);
+    }
+    function getValue(callback) {
+        let value = 0;
+
+        setTimeout(function () {
+            value = 10;
+            callback(value);
+        },2000);
+        return value;
+    }
+
+    console.log(getValue(print))
+
+
+
+
+    // 1.3)
+    function getValue() {
+        let value = 0;
+        return new Promise(function (resolve,reject) {
+            setTimeout(function () {
+                value = 15;
+                resolve(value);
+            },2000);
+        });
+    }
+
+    getValue().then(function (param) {
+        console.log(param)
+        param = param + 10;
+        return param;
+    }).then(function (param) {
+        console.log(param);
+        return param+10;
+    }).then(function (param) {
+        console.log(param)
+    });
+    console.log("Hello");
+
+</script>
+
+</body>
+</html>
