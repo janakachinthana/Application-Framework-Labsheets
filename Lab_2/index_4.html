@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Framework Lab 2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    // 4 exercise 1 using async/await)
+    function getValue() {
+        let value = 0;
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                value = 10;
+                resolve(value);
+            },2000);
+        });
+    }
+
+    function getNewValue() {
+        return new Promise(function (resolve) {
+            resolve(100);
+
+        });
+    }
+
+    async function print() {
+        let v = await getValue();
+        console.log(v);
+        console.log("THis is an async function");
+        let newV = await getNewValue();
+        console.log(newV);
+    }
+
+    print();
+    console.log("hello");
+
+</script>
+
+</body>
+</html>

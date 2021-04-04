@@ -1,0 +1,26 @@
+Git Commands
+
+1) Initializing a git repository in local disk: git init
+
+2) To check previous things that you have done in the repository: git log
+
+3) To see the current status of the specific node: git status
+
+4) Add everything to the git repository: git add .
+
+5) Add only one file to the git repository: git add <specific-file-name>
+
+6) To add a commit: git commit -m "message that you want to commit"
+
+7) To compress git log: git log --oneline
+
+8) If you have done something wrong and already committed but you want to get the previous one: git checkout <specific-log-id>
+
+9) To get newly added one after 8 task: git checkout master
+
+10) Push to the repository: git remote add origin <url>
+git push -u origin master
+
+11) Pull from git repository: git pull origin master
+
+12) To clone: git clone <url>
