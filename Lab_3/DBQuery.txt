@@ -1,0 +1,83 @@
+
+3) To insert one document to the database
+db.getCollection('lab_3').insertOne({
+    "name": "John",
+    "dateOfBirth": "1990-01-01T00:00:00Z",
+    "subjects": ["Application frameworks", "Computer architecture"]
+})
+
+
+4) To find
+db.getCollection('lab_3').find({})
+
+find by name
+db.getCollection('lab_3').find({"name":"John"})
+
+
+5) Find by id
+db.getCollection('lab_3').find({"_id"ObjectId("6043518e62f3d6275ca31d42")})
+
+
+6) update a document
+//better to keep identification of the document that you going to update if not it will update the first one (default)
+db.getCollection('lab_3').updateOne(
+{"name":"John"},
+{$push:{"subjects":"Distributed Computing"}})
+
+
+7) Insert many documents at once
+db.getCollection('lab_3').insertMany([
+{
+ "name": "Smith",
+ "dateOfBirth": "1990-01-15T00:00:00Z",
+ "subjects": ["Application frameworks", "Computer architecture"],
+ "isActive": true
+},
+{
+ "name": "Jane",
+ "dateOfBirth": "1990-02-15T00:00:00Z",
+ "subjects": ["Application frameworks", "Computer architecture"],
+ "isActive": false
+}
+])
+
+
+db.getCollection('lab_3').find({"isActive":true})
+
+
+8)
+db.getCollection('lab_3').updateOne(
+{
+    "name":"Smith"
+    "isActive":false
+},
+{
+    $push:{"subjects":"Distributed Computing"}
+}
+)
+
+
+9)
+db.getCollection('lab_3').updateOne(
+{
+    "name":"John"
+},
+{
+    $set:{"isActive":false}
+}
+)
+
+// or if the document is in fist keep the fist brackets empty
+db.getCollection('lab_3').updateOne(
+{},
+{
+    $set:{"isActive":false}
+}
+)
+
+
+10) To delete first document in the collection
+db.getCollection('lab_3').deleteOne({})
+
+to delete specific document
+db.getCollection('lab_3').deleteOne({"name":"Smith"})

@@ -1,0 +1,4 @@
+
+NodeJs is awesome...!
+
+Hi i am janaka this file is to check wether the file read and write function worked or not.
