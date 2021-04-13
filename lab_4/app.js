@@ -33,6 +33,26 @@ http.createServer((request, response) => {
     response.write('<h1> Hello World </h1>');
     response.write('<h1> I am Janaka </h1>');
     response.end();
-}).listen(3000);
+}).listen(3000, (err)=>{
+    console.log('server is listning to port 3000')
+});
 
+http.createServer((request, response) => {
+    response.setHeader('Content-Type', 'text/html');
 
+    switch (request.method){
+        case 'GET' :
+            response.write('<h1>this is GET method</h1>');
+            response.end();
+            break;
+
+        case 'POST':
+            request.on('data', data =>{
+                response.write('<h1>Thi is POST method ' + data + '</h1>');
+                response.end();
+            });
+            break;
+    }
+}).listen(3001, (err) =>{
+    console.log('server is listning to port 3001')
+});
