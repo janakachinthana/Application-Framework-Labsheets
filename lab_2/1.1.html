@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.1</title>
+</head>
+<body>
+<script>
+    var x = 0;
+
+    function timeOut(){
+        x = 10;
+        return x;
+    }
+    function y(){
+        x = 20;
+        setTimeout(function (){
+          console.log(timeOut())
+
+        },1000)
+
+        return x
+    }
+    console.log(y());
+
+</script>
+</body>
+</html>

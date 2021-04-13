@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+<script>
+    let y = 0;
+    function x(){
+
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+            y = 10
+                let err = "error occurred"
+            resolve(y);
+            reject(y);
+            },3000)
+        })
+    }
+
+    function z(){
+        return new Promise((resolve, reject) => {
+          y = 20;
+          resolve(y)
+        })
+    }
+
+     async function u(){
+
+
+        let I = await x();
+        console.log(I);
+
+        let O = await z();
+        console.log(O);
+
+    }
+
+    u();
+</script>
+</body>
+</html>
