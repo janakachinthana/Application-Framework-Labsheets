@@ -1,6 +1,7 @@
 const koa = require('koa');
 const bodyparser = require('koa-bodyparser');
 const HomeRoutes = require('./routes/home.router');
+const PostRoutes = require('./routes/post.routes')
 
 const app = new koa();
 
@@ -8,6 +9,10 @@ const app = new koa();
 app.use(bodyparser());
 app.use(HomeRoutes.routes())
     .use(HomeRoutes.allowedMethods());
+
+app.use(bodyparser());
+app.use(PostRoutes.routes())
+    .use(PostRoutes.allowedMethods());
 
 
 app.use(ctx =>{
